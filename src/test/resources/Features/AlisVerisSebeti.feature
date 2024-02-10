@@ -25,7 +25,7 @@ Feature: AlisVerisSebeti
     Given User is in "Baku electronics" page
     When Click to any element
     And Click to alis veris sebeti button
-    Then User should see that item on the Alis veris sebeti
+    Then User should see that item on the Alis veris sebeti page
 
   Scenario: Check deleting item from the Alis veris sebeti
     Given User is in "Baku electronics" page
