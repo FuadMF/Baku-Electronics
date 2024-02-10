@@ -19,7 +19,7 @@ public class BaseMethods {
         return driver.findElements(locator);
     }
 
-    protected int generateRandNum(int size){
-        return 0;
+    protected int generateRanNum(int size){
+        return (int) (Math.random()*size);
     }
 }
