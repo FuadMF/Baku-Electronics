@@ -1,11 +1,87 @@
 package StepDefinitions;
 
 import Pom.KampaniyalarPom;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import java.util.List;
 
 public class KampaniyalarSteps extends BaseMethods{
     KampaniyalarPom kampaniyalarPom;
 
     public KampaniyalarSteps(){
         kampaniyalarPom = KampaniyalarPom.getInstance();
+    }
+
+
+
+    @When("Click to Kampaniyalar button")
+    public void clickToKampaniyalarButton() {
+        driver.findElement(By.linkText("Kampaniyalar")).click();
+    }
+
+    @Then("User should be navigated to the Kampaniyalar page")
+    public void userShouldBeNavigatedToTheKampaniyalarPage() {
+        String actualText = driver.findElement(By.className("blog__title-wrap")).getText();
+        String expectedText = "Kampaniyalar";
+        Assert.assertEquals(actualText,expectedText);
+    }
+
+    @And("Click to Endirim filter")
+    public void clickToEndirimFilter() {
+        driver.findElement(By.linkText("Endirim")).click();
+
+    }
+
+    @Then("User should see Endirim items on the page")
+    public void userShouldSeeEndirimItemsOnThePage() {
+        List<WebElement> elements = driver.findElements(By.className("blog__item-label"));
+        boolean flag = false;
+        for (WebElement element:elements) {
+            if (element.getText().contains("Endirim")) {
+                flag = true;
+            }
+        }
+        Assert.assertTrue(flag);
+    }
+
+    @And("Click to Hədiyyə filter")
+    public void clickToHədiyyəFilter() {
+        driver.findElement(By.linkText("Hədiyyə")).click();
+    }
+
+    @Then("User should see Hədiyyə items on the page")
+    public void userShouldSeeHədiyyəItemsOnThePage() {
+        List<WebElement> elements = driver.findElements(By.className("blog__item-label"));
+        boolean flag = false;
+        for (WebElement element:elements) {
+            if (element.getText().contains("Hədiyyə")) {
+                flag = true;
+            }
+        }
+        Assert.assertTrue(flag);
+    }
+
+    @And("Click to Nisyə alış filter")
+    public void clickToNisyəAlısFilter() {
+        driver.findElement(By.linkText("Nisyə alış")).click();
+    }
+
+    @Then("User should see Nisyə alış items on the page")
+    public void userShouldSeeNisyəAlısItemsOnThePage() {
+        List<WebElement>elements = driver.findElements(By.className("blog__item-label"));
+        boolean flag = false;
+        for (WebElement element:elements) {
+            if (element.getText().contains("Nisyə alış")) {
+                flag = true;
+            }
+        }
+        Assert.assertTrue(flag);
     }
 }
