@@ -15,6 +15,7 @@ import java.util.List;
         features = "classpath:features",
         plugin = {"pretty", "json:target/cucumber.json"}
 
+
 )
 
 
@@ -40,7 +41,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         File reportOutputDirectory = new File("target");
         List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add("target/cucumber.json");
-        Configuration configuration = new Configuration(reportOutputDirectory, "DemosTelerik");
+        Configuration configuration = new Configuration(reportOutputDirectory, "BakuElectronics");
         configuration.addPresentationModes(PresentationMode.EXPAND_ALL_STEPS);
         ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
         reportBuilder.generateReports();

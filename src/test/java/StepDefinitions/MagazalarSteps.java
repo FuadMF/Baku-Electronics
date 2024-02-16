@@ -25,13 +25,15 @@ public class MagazalarSteps extends BaseMethods{
     }
 
     @Then("User should be navigated to the Magazalar page")
-    public void userShouldBeNavigatedToTheMagazalarPage() {
+    public void userShouldBeNavigatedToTheMagazalarPage() throws InterruptedException {
+        Thread.sleep(2000);
         WebElement element = driver.findElement(By.className("static-header__title"));
         Assert.assertTrue(element.isDisplayed());
     }
 
     @Then("User should see Branches  list in Baku")
-    public void userShouldSeeBranchesListInBaku() {
+    public void userShouldSeeBranchesListInBaku() throws InterruptedException {
+        Thread.sleep(2000);
         String actual = driver.findElement(By.xpath("//*[@class = 'static-text']/div[1]/div[2]/div[1]/h3[1]/button[1]")).getText();
         String expectedText = "20 Yanvar filialı (Bravo hiрermarket)";
         Assert.assertEquals(actual,expectedText);
