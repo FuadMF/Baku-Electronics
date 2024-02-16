@@ -1,5 +1,6 @@
 Feature: Search
   Background:
+    And User click popup
     When User clicks search input
   Scenario Outline: Check search on the page
       Given User is in "Baku electronics" page

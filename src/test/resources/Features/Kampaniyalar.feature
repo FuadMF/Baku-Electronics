@@ -1,4 +1,7 @@
 Feature: Kampaniyalar
+  Background:
+    And User click popup
+
   Scenario: Check Kampaniyalar functionality
     Given User is in "Kampaniyalar web" page
     When Click to Kampaniyalar button

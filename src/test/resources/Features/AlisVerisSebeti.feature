@@ -1,5 +1,6 @@
 Feature: AlisVerisSebeti
-
+Background:
+  And User click popup
 
   Scenario: Check direction to Alis veris sebeti page
     Given User is in "Baku electronics" page
