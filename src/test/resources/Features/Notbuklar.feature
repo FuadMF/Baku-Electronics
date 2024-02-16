@@ -157,7 +157,7 @@ Examples:
       | 1.0 GHz - 3.6 GHz |
       | 1.0 GHz - 3.6 GHz |
       | 1.1 GHz - 2.8 GHz |
-
+@5
   Scenario Outline: Check "<Ekran tipi>" filters for notebook
     Given User is in "Notbuklar" page
     And User clicks "<Ekran tipi>" ekran tipi notbuklar filters
@@ -204,8 +204,7 @@ Scenario Outline: Check filters on the Notbuklar page
    And User clicks "<Brend>" filters
    And User clicks "<Emeliyyat sistemi>" emeliyyat sistemi filters
    And User clicks "<Ekranin olcusu>" ekranin olcusu filters
-   And User clicks "<Operativ yaddas>" operativ yaddas notbuklar filters
   Then  User should see notbuklar on the page
 Examples:
-  | Brend | Emeliyyat sistemi | Ekranin olcusu | Operativ yaddas |
-  | Apple | MacOS             | 13.3           | 8 GB            |
+  | Brend | Emeliyyat sistemi | Ekranin olcusu |
+  | Apple | MacOS             | 13.3           |

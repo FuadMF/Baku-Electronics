@@ -1,6 +1,7 @@
 Feature: SmartfonlarMobilTelefonlar
 
 Background:
+  And User click popup
   When Move to Telefonlar,plansetler ve qadcetler element
   And Click to Smartfonlar,mobil telefonlar button
 

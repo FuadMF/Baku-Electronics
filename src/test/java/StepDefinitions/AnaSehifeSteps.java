@@ -13,6 +13,7 @@ public class AnaSehifeSteps extends BaseMethods{
 
     public AnaSehifeSteps(){
         anaSehifePom = AnaSehifePom.getInstance();
+
     }
 
 

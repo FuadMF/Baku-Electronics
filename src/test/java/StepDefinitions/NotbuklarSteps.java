@@ -324,21 +324,21 @@ public class NotbuklarSteps extends BaseMethods {
         Thread.sleep(2000);
         WebElement element = getElement(notbuklarPom.getHeading());
         String actualText = element.getText().toLowerCase();
-       Assert.assertTrue(actualText.contains(text));
+        Assert.assertTrue(actualText.contains(text));
     }
 
     @Then("User should see notbuklar on the page")
     public void userShouldSeeNotbuklarOnThePage() throws InterruptedException {
         Thread.sleep(2000);
         List<WebElement> elements = getElements(notbuklarPom.getProductTitle());
-
+        boolean flag=false;
+        String expectedText ="Apple MacBook 13";
+        for(WebElement element:elements){
+            if(element.getText().toLowerCase().contains(expectedText.toLowerCase())){
+                flag=true;
+            }
+        }
+        Assert.assertTrue(flag);
     }
 
-
-    @And("User click popup")
-    public void userClickPopup() {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-   executor.executeScript("arguments[0].click();", getElement(By.className("seg-popup-close")));
-
-    }
 }
