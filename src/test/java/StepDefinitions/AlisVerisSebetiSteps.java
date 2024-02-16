@@ -21,13 +21,13 @@ public class AlisVerisSebetiSteps extends BaseMethods{
 
     @When("Click to alis veris sebeti button")
     public void clickToAlisVerisSebetiButton() {
-        driver.findElement(By.className("icon-cart")).click();
+        getElement(alisVerisSebetiPom.getAlisVerisSebetiBtn()).click();
     }
 
 
     @Then("User should be navigated to alis veris sebeti page")
     public void userShouldBeNavigatedToAlisVerisSebetiPage() {
-        WebElement element = driver.findElement(By.className("order-wrap__empty"));
+        WebElement element = getElement(alisVerisSebetiPom.getSebetinizBosdurElem());
         String actual = element.getText();
         String expected = "Səbətiniz boşdur";
         Assert.assertEquals(actual,expected);
@@ -37,7 +37,7 @@ public class AlisVerisSebetiSteps extends BaseMethods{
     @When("Click to almaq button for four elements")
     public void clickToAlmaqButtonForFourElements() throws InterruptedException {
         Thread.sleep(5000);
-        List<WebElement> elements = driver.findElements(By.xpath("//*[@class = 'wrapper']/main/section[2]/div/div//*[@class = 'btn__main']"));
+        List<WebElement> elements = getElements(alisVerisSebetiPom.getAlmaqBtn());
         int expected = 4;
         for (int i = 0;i<expected;i++){
             elements.get(i).click();
@@ -47,7 +47,7 @@ public class AlisVerisSebetiSteps extends BaseMethods{
     @Then("Alis veris sebeti should be matched with added elements")
     public void alisVerisSebetiShouldBeMatchedWithAddedElements() throws InterruptedException {
         Thread.sleep(3000);
-        WebElement element = driver.findElement(By.className("ms2_total_count"));
+        WebElement element = getElement(alisVerisSebetiPom.getCartTotalCountElem());
         String s = element.getText();
         int actual = Integer.parseInt(s);
         int expected = 4;
@@ -57,7 +57,7 @@ public class AlisVerisSebetiSteps extends BaseMethods{
 
     @And("Click minus button for two of them")
     public void clickMinusButtonForTwoOfThem() {
-        List<WebElement> elements = driver.findElements(By.className("js_minus"));
+        List<WebElement> elements = getElements(alisVerisSebetiPom.getMinusBtn());
         int expected = 2;
         for (int i = 0;i<expected;i++){
             elements.get(i).click();
@@ -68,7 +68,7 @@ public class AlisVerisSebetiSteps extends BaseMethods{
     public void alisVerisSebetiShouldBeDecreased() throws InterruptedException {
         Thread.sleep(3000);
         int expected = 4-2;
-        WebElement element = driver.findElement(By.className("ms2_total_count"));
+        WebElement element = getElement(alisVerisSebetiPom.getCartTotalCountElem());
         String s = element.getText();
         int actual = Integer.parseInt(s);
         Assert.assertEquals(actual,expected);
@@ -76,7 +76,7 @@ public class AlisVerisSebetiSteps extends BaseMethods{
 
     @When("Click to any element")
     public void clickToAnyElement() {
-        List<WebElement> elements = driver.findElements(By.xpath("//*[@class = 'wrapper']/main/section[2]/div/div//*[@class = 'btn__main']"));
+        List<WebElement> elements = getElements(alisVerisSebetiPom.getProductsLoc());
         int expected = 1;
         for (int i = 0;i<expected;i++){
             elements.get(i).click();
@@ -85,7 +85,7 @@ public class AlisVerisSebetiSteps extends BaseMethods{
 
     @Then("User should see that item on the Alis veris sebeti page")
     public void userShouldSeeThatItemOnTheAlisVerisSebetiPage() {
-        WebElement element = driver.findElement(By.className("order-card"));
+        WebElement element = getElement(alisVerisSebetiPom.getOrderLoc());
         String actual = element.getText();
         String expected = "Smartfon";
         Assert.assertTrue(actual.contains(expected));
@@ -94,14 +94,14 @@ public class AlisVerisSebetiSteps extends BaseMethods{
 
     @And("Click minus button")
     public void clickMinusButton() throws InterruptedException {
-        driver.findElement(By.className("js_minus")).click();
+        getElement(alisVerisSebetiPom.getMinusBtn()).click();
     }
 
 
     @Then("Item should be deleted from the alis veris sebeti")
     public void itemShouldBeDeletedFromTheAlisVerisSebeti() throws InterruptedException {
         Thread.sleep(3000);
-        List<WebElement> elements = driver.findElements(By.className("order-card"));
+        List<WebElement> elements = getElements(alisVerisSebetiPom.getOrderLoc());
         Assert.assertTrue(elements.isEmpty());
     }
 
