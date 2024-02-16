@@ -23,25 +23,25 @@ public class KampaniyalarSteps extends BaseMethods{
 
     @When("Click to Kampaniyalar button")
     public void clickToKampaniyalarButton() {
-        driver.findElement(By.linkText("Kampaniyalar")).click();
+        getElement(kampaniyalarPom.getKampaniyalar()).click();
     }
 
     @Then("User should be navigated to the Kampaniyalar page")
     public void userShouldBeNavigatedToTheKampaniyalarPage() {
-        String actualText = driver.findElement(By.className("blog__title-wrap")).getText();
+        String actualText = getElement(kampaniyalarPom.getNavigateKampaniya()).getText();
         String expectedText = "Kampaniyalar";
         Assert.assertEquals(actualText,expectedText);
     }
 
     @And("Click to Endirim filter")
     public void clickToEndirimFilter() {
-        driver.findElement(By.linkText("Endirim")).click();
+        getElement(kampaniyalarPom.getEndirim()).click();
 
     }
 
     @Then("User should see Endirim items on the page")
     public void userShouldSeeEndirimItemsOnThePage() {
-        List<WebElement> elements = driver.findElements(By.className("blog__item-label"));
+        List<WebElement> elements = getElements(kampaniyalarPom.getItems());
         boolean flag = false;
         for (WebElement element:elements) {
             if (element.getText().contains("Endirim")) {
@@ -53,12 +53,12 @@ public class KampaniyalarSteps extends BaseMethods{
 
     @And("Click to Hədiyyə filter")
     public void clickToHədiyyəFilter() {
-        driver.findElement(By.linkText("Hədiyyə")).click();
+        getElement(kampaniyalarPom.getHediyye()).click();
     }
 
     @Then("User should see Hədiyyə items on the page")
     public void userShouldSeeHədiyyəItemsOnThePage() {
-        List<WebElement> elements = driver.findElements(By.className("blog__item-label"));
+        List<WebElement> elements =getElements(kampaniyalarPom.getItems());
         boolean flag = false;
         for (WebElement element:elements) {
             if (element.getText().contains("Hədiyyə")) {
@@ -70,12 +70,12 @@ public class KampaniyalarSteps extends BaseMethods{
 
     @And("Click to Nisyə alış filter")
     public void clickToNisyəAlısFilter() {
-        driver.findElement(By.linkText("Nisyə alış")).click();
+        getElement(kampaniyalarPom.getNisyeAlis()).click();
     }
 
     @Then("User should see Nisyə alış items on the page")
     public void userShouldSeeNisyəAlısItemsOnThePage() {
-        List<WebElement>elements = driver.findElements(By.className("blog__item-label"));
+        List<WebElement>elements = getElements(kampaniyalarPom.getItems());
         boolean flag = false;
         for (WebElement element:elements) {
             if (element.getText().contains("Nisyə alış")) {
