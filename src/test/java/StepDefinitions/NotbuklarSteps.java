@@ -243,24 +243,13 @@ public class NotbuklarSteps extends BaseMethods {
     @Then("User should see {string} notebooks on the page table")
     public void userShouldSeeNotebooksOnThePageTable(String expected) throws InterruptedException {
         Thread.sleep(3000);
-        String[] array = expected.split("&");
-        List<WebElement> products = getElements(notbuklarPom.getTableText());
+        List<WebElement> elements = getElements(notbuklarPom.getTableText());
         boolean flag = false;
-        for(WebElement element: products){
-            System.out.println("Product Text: " + element.getText());
-            for(String s:array){
-                System.out.println("Expected:" + s);
-                if(element.getText().toLowerCase().contains(s.toLowerCase())){
-                    flag=true;
-                    break;
+        for (WebElement element : elements) {
+            if (element.getText().contains(expected)){
+                flag = true;
             }
-            }
-            System.out.println("Actual: " + element.getText());
-            System.out.println("Expected: " + Arrays.toString(array));
-
-
         }
-
         Assert.assertTrue(flag);
     }
 
@@ -275,7 +264,6 @@ public class NotbuklarSteps extends BaseMethods {
         }
         Assert.assertTrue(flag);
     }
-
 
     @Then("User should see Ucuzdan bahaya products on the page")
     public void userShouldSeeUcuzdanBahayaProductsOnThePage() throws InterruptedException {
@@ -323,7 +311,7 @@ public class NotbuklarSteps extends BaseMethods {
     public void userShouldSeeNotebuksOnThePage(String text) throws InterruptedException {
         Thread.sleep(2000);
         WebElement element = getElement(notbuklarPom.getHeading());
-        String actualText = element.getText().toLowerCase();
+        String actualText = element.getText();
         Assert.assertTrue(actualText.contains(text));
     }
 

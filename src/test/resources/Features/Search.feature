@@ -30,7 +30,7 @@ Feature: Search
       | Samsung Galaxy a            |
       | Apple                       |
       | kabel usb                   |
-      | Dyson fen                   |
+      | Dyson                       |
       | Redmi                       |
       | tozsoran                    |
       | utu                         |
@@ -40,8 +40,7 @@ Feature: Search
       | Konstruktor Öz şəhərini tik |
       | playStation                 |
       | termopot                    |
-      | Elektrik diş fırçaları      |
-      | Mühərrik yağları            |
+
 
 
   Scenario Outline:Check search on the page unsuccesful

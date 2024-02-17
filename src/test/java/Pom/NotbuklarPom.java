@@ -22,7 +22,7 @@ public class NotbuklarPom {
     private final By ekranTipi = By.xpath("//*[@id = 'mse2_filters']/div[13]/div[2]/div[1]//*[@class = 'filters__link']");
     private final By color = By.xpath("//*[@id = 'mse2_filters']/div[14]/div[2]/div[1]//*[@class = 'filters__link']");
     private final By clickProduct = By.xpath("//*[@class='flex__row--start js_pagination_container']//*[@class='product__card']");
-    private final By tableText = By.className("specs-table__list");
+    private final By tableText = By.className("specs-table__text");
     private final By endirim= By.className("product__price--discount");
     private final By catalogSort =By.className("catalog__sort-item");
     private final By productPrice = By.className("product__price.price_discount_list");

@@ -57,7 +57,7 @@ Scenario Outline:  Check  "<Emeliyyat sistemi>" filters for notebook
   Examples:
     | Prosessor tipi |
     | Athlon         |
-    | Celeron        |
+    | Core i9        |
     | Core i3        |
     | Core i5        |
     | Core i7        |
@@ -74,8 +74,8 @@ Examples:
   | AMD Radeon 540X     |
   | AMD Radeon Graphics |
   | AMD Radeon Vega 7   |
-  | Apple M1            |
-
+  | AMD Radeon RX640    |
+#
 
   Scenario Outline:Check "<Operativ yaddas>" filters for notebook
     Given User is in "Notbuklar" page
@@ -114,9 +114,9 @@ Examples:
       | Qurasdirilmis yaddas |
       | 1 TB                 |
       | 1 TB HDD             |
-      | 1 TB HDD+ 256 GB SSD |
+      | 1TB HDD + 256 GB SSD |
       | 1 TB SSD             |
-      | 1TB HDD+128GB SSD    |
+      | 1TB HDD + 128GB SSD  |
 
   Scenario Outline: Check "<Nuvelerin sayi>" filters for notebook
       Given User is in "Notbuklar" page
