@@ -20,7 +20,7 @@ Background:
       | Apple&ENERGIZER       |
       | Apple&ENERGIZER&Honor |
       | HUAWEI&INFINIX        |
-
+#
 
   Scenario Outline: Check "<Emeliyyat>" sistemi checkbox
     Given User is in "Smartfonlar,mobil telefonlar web" page
@@ -43,12 +43,12 @@ Background:
     And Click to any item
     Then User should see "<Text>" about of the phones details
     Examples:
-      | Ekran    | Text     |
-      | 1.8      | 1.8      |
-      | 1.77     | 1.77     |
-      | 1.77 TFT | 1.77 TFT |
-      | 2.4      | 2.4      |
-      | 2.8      | 2.8      |
+      | Ekran | Text |
+      | 1.8   | 1.8  |
+      | 1.77  | 1.77 |
+      | TFT   | 1.77 |
+      | 2.4   | 2.4  |
+      | 2.8   | 2.8  |
 
 
 

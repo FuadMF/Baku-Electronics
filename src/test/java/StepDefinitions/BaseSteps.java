@@ -17,7 +17,7 @@ public class BaseSteps extends BaseMethods{
     public void userWantTo(String arg0)  {
     }
     @And("User click popup")
-    public void userClickPopup() {
+    public void userClickPopup() throws InterruptedException {
         try {
             JavascriptExecutor executor = (JavascriptExecutor)driver;
             executor.executeScript("arguments[0].click();", getElement(By.className("seg-popup-close")));
@@ -25,7 +25,7 @@ public class BaseSteps extends BaseMethods{
 
         }
 
-
+Thread.sleep(3000);
     }
     @When("Move to Telefonlar,plansetler ve qadcetler element")
     public void moveToTelefonlarPlansetlerVeQadcetlerElement() {

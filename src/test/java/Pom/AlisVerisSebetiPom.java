@@ -18,13 +18,6 @@ public class AlisVerisSebetiPom {
 
 
 
-
-
-
-
-
-
-
     private AlisVerisSebetiPom(){
 
     }

@@ -14,6 +14,7 @@ private final By countHeart = By.xpath("/html/body/div[1]/header/div[2]/div/div[
 private final By productCard = By.className("product__card");
 private final By click1 =By.xpath("/html/body/div[1]/main/section[4]/div/div/div/div/div/div[1]/div/div/div/div/div/div[2]/div[2]/button/i");
 private final By clickLogo = By.cssSelector(".logo__img.logo__img.logo__img_desktop");
+private final By productsName = By.className("product__title");
 private FavoritlerPom(){
 
     }

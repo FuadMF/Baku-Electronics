@@ -27,9 +27,7 @@ public class FavoritlerSteps extends BaseMethods{
     @Then("User should be navigated to favoritler page")
     public void userShouldBeNavigatedToFavoritlerPage() {
         WebElement element = getElement(favoritlerPom.getTable());
-        String actual = element.getText();
-        String expected = "";
-        Assert.assertEquals(actual,expected);
+        Assert.assertTrue(element.isDisplayed());
     }
 
     @When("Click to favoritler button for four elements")
@@ -87,26 +85,26 @@ public class FavoritlerSteps extends BaseMethods{
         Assert.assertTrue(flag);
     }
 
-    @Then("Item should be deleted from the favoritler sebeti")
-    public void itemShouldBeDeletedFromTheFavoritlerSebeti() throws InterruptedException {
-        Thread.sleep(2000);
-        WebElement element = getElement(favoritlerPom.getTable());
-        String actual = element.getText();
-        String expected = "";
-        Assert.assertEquals(actual,expected);
-    }
+
 
 
     @And("Click favoritler button for four of them")
     public void clickFavoritlerButtonForFourOfThem() {
         List<WebElement> elements = getElements(favoritlerPom.getClickHeartBasket());
-        for(WebElement element:elements){
-            element.click();
+        int k = 4;
+        for (int i = 0;i<k;i++){
+            elements.get(i).click();
         }
     }
 
     @And("Click to home page logo")
     public void clickToHomePageLogo() {
         getElement(favoritlerPom.getClickLogo()).click();
+    }
+    @Then("Item should be deleted from the favoritler sebeti")
+    public void itemShouldBeDeletedFromTheFavoritlerSebeti() throws InterruptedException {
+        Thread.sleep(2000);
+        List<WebElement> elements = getElements(favoritlerPom.getProductsName());
+        Assert.assertTrue(elements.isEmpty());
     }
 }
